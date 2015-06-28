@@ -2,6 +2,7 @@ module LCS
 
 export longest_common_subsequence, longest_contiguous_subsequence
 
+# -------
 
 function longest_common_subsequence(a, b; result_base = "", join_fn = string)
     lengths = zeros(length(a) + 1, length(b) + 1)
@@ -47,6 +48,7 @@ end
 
 longest_common_subsequence(a::Array, b::Array) = longest_common_subsequence(a, b, result_base = [], join_fn = vcat)
 
+# -------
 
 function longest_contiguous_subsequence(a, b)
     m = zeros(length(a) + 1, length(b) + 1)
