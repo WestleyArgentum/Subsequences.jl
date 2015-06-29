@@ -72,7 +72,9 @@ function longest_contiguous_subsequence(a, b)
         end
     end
 
-    (x_longest - longest):(x_longest - 1), (y_longest - longest):(y_longest - 1)
+    a_range = (x_longest - longest):(x_longest - 1)
+    b_range = (y_longest - longest):(y_longest - 1)
+    a[a_range], a_range, b_range
 end
 
 end
