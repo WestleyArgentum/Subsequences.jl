@@ -51,7 +51,7 @@ longest_common_subsequence(a::Array, b::Array) = longest_common_subsequence(a, b
 # -------
 
 function longest_contiguous_subsequence(a, b)
-    m = zeros(length(a) + 1, length(b) + 1)
+    m = zeros(Int, length(a) + 1, length(b) + 1)
     longest, x_longest, y_longest = 0, 0, 0
 
     for x in 2:(length(a) + 1)
