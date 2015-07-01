@@ -1,4 +1,4 @@
-using LCS
+using Subsequences
 using Base.Test
 
 a = "abc"

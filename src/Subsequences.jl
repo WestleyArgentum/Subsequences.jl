@@ -1,4 +1,4 @@
-module LCS
+module Subsequences
 
 export longest_common_subsequence, longest_contiguous_subsequence
 

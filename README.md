@@ -1,15 +1,15 @@
-# LCS.jl
+# Subsequences.jl
 
 ##### A Julia package for finding longest common and longest contiguous subsequences
 
-[![Build Status](https://travis-ci.org/WestleyArgentum/LCS.jl.svg?branch=master)](https://travis-ci.org/WestleyArgentum/LCS.jl)
+[![Build Status](https://travis-ci.org/WestleyArgentum/Subsequences.jl.svg?branch=master)](https://travis-ci.org/WestleyArgentum/Subsequences.jl)
 
 ## Quickstart
 
 ```julia
-julia> Pkg.add("LCS")
+julia> Pkg.add("Subsequences")
 
-julia> using LCS
+julia> using Subsequences
 
 julia> a = "abc-abc----"; b = "___ab_c__abc";
 

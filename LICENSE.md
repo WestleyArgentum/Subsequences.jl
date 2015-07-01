@@ -1,6 +1,6 @@
-The LCS.jl package is licensed under the MIT "Expat" License:
+The Subsequences.jl package is licensed under the MIT "Expat" License:
 
-> Copyright (c) 2015: WestleyArgentum and [other contributors](https://github.com/WestleyArgentum/LCS.jl/graphs/contributors)
+> Copyright (c) 2015: WestleyArgentum and [other contributors](https://github.com/WestleyArgentum/Subsequences.jl/graphs/contributors)
 >
 > Permission is hereby granted, free of charge, to any person obtaining
 > a copy of this software and associated documentation files (the
