@@ -11,9 +11,10 @@ end
 function longest_common_subsequence(a, b, result_base, join_fn)
     lengths = zeros(length(a) + 1, length(b) + 1)
 
-    for (i, x) in enumerate(a)
-        for (j, y) in enumerate(b)
-            if x == y
+    for i in 1:length(a)
+        ai = a[i]
+        for j in 1:length(b)
+            if ai == b[j]
                 lengths[i+1, j+1] = lengths[i, j] + 1
             else
                 lengths[i+1, j+1] = max(lengths[i+1, j], lengths[i, j+1])
@@ -50,7 +51,12 @@ function longest_common_subsequence(a, b, result_base, join_fn)
     result, a_start:a_end, b_start:b_end
 end
 
-longest_common_subsequence{T1, T2}(a::Array{T1}, b::Array{T2}) = longest_common_subsequence(a, b, Vector{promote_type(T1, T2)}(), vcat)
+# In julia < v0.6, the return type of vcat(x::T, v::Vector{T}) is not
+# inferred correctly, so we explicitly construct [x] before calling
+# Base.vcat
+prepend{T}(x::T, v::AbstractVector{T}) = vcat([x], v)
+
+longest_common_subsequence{T1, T2}(a::Array{T1}, b::Array{T2}) = longest_common_subsequence(a, b, Vector{promote_type(T1, T2)}(), prepend)
 
 # -------
 
