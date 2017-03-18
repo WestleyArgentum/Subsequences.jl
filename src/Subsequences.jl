@@ -5,6 +5,10 @@ export longest_common_subsequence, longest_contiguous_subsequence
 # -------
 
 function longest_common_subsequence(a, b; result_base = "", join_fn = string)
+    longest_common_subsequence(a, b, result_base, join_fn)
+end
+
+function longest_common_subsequence(a, b, result_base, join_fn)
     lengths = zeros(length(a) + 1, length(b) + 1)
 
     for (i, x) in enumerate(a)
@@ -46,7 +50,7 @@ function longest_common_subsequence(a, b; result_base = "", join_fn = string)
     result, a_start:a_end, b_start:b_end
 end
 
-longest_common_subsequence(a::Array, b::Array) = longest_common_subsequence(a, b, result_base = [], join_fn = vcat)
+longest_common_subsequence{T1, T2}(a::Array{T1}, b::Array{T2}) = longest_common_subsequence(a, b, Vector{promote_type(T1, T2)}(), vcat)
 
 # -------
 
