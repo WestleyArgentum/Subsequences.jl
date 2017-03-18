@@ -56,7 +56,7 @@ end
 # Base.vcat
 prepend{T}(x::T, v::AbstractVector{T}) = vcat([x], v)
 
-longest_common_subsequence{T1, T2}(a::Array{T1}, b::Array{T2}) = longest_common_subsequence(a, b, Vector{promote_type(T1, T2)}(), prepend)
+longest_common_subsequence{T1, T2}(a::Array{T1}, b::Array{T2}) = longest_common_subsequence(a, b, promote_type(T1, T2)[], prepend)
 
 # -------
 
