@@ -8,7 +8,7 @@ function longest_common_subsequence(a, b; result_base = "", join_fn = string)
     longest_common_subsequence(a, b, result_base, join_fn)
 end
 
-function longest_common_subsequence(a, b, result_base, join_fn)
+function longest_common_subsequence{T}(a, b, result_base::T, join_fn)
     lengths = zeros(length(a) + 1, length(b) + 1)
 
     for i in 1:length(a)
@@ -23,7 +23,7 @@ function longest_common_subsequence(a, b, result_base, join_fn)
     end
 
     x, y = length(a) + 1, length(b) + 1
-    result = result_base
+    result::T = result_base
     a_start, a_end = 0, 0
     b_start, b_end = 0, 0
 
